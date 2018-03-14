@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/favIcon.png">
+
+    <style>
+        @import url(http://fonts.googleapis.com/css?family=Rokkitt);
+        ._wrapper {
+            font-size: 2em;
+            width: 74%;
+            height: 36.5px;
+            margin: auto;
+            padding: 5px;
+            border-radius: 6px;
+            background-color: rgba(0, 71, 214, 0.6);
+        }
+        
+        .quiz_Container {
+            background-color: #ccc;
+            border-radius: 8px;
+            width: 75%;
+            height: auto;
+            margin: auto;
+            margin-top: 20px;
+            padding: 5px 0px;
+        }
+        
+        #start_Button {
+            border-radius: 6px;
+            width: 150px;
+            height: 40px;
+            text-align: center;
+            background-color: rgba(0, 71, 214, 0.6);
+            color: #000;
+            box-shadow: 3px 5px 4px;
+            font-family: Rokkitt, serif;
+            font-weight: bold;
+            margin: 10px auto 10px auto;
+            padding-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="_wrapper"> </div>
+    <div class="quiz_Container">
+        <h1>Quiz Application</h1>
+        <div id="start_Button" onclick="quizStart()">Start Quiz</div>
+    </div>
+</body>
+<script>
+    function quizStart() {
+        window.location = "index.html";
+    }
+</script>
+
+
+
+</html>
