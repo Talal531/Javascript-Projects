@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BMI Index</title>
+    <link rel="stylesheet" href="style.css">
+      <script src="bmi.js" ></script>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="container">
+            <h1>Body Mass Index</h1>
+
+            <div id="inputContainer">
+                <form id="BMI" name="bmiform">
+                    <fieldset>
+                        <legend>Input</legend>
+                            <p>
+                                <label>Sex:</label>
+                                <input type="radio" name="gender" value="M"/> <span id="male">Male</span>
+                                <!--<label for="male" id="maleLabel">Male</label>-->
+
+                                <input type="radio" name="gender" value="F"/> <span id="female">Female</span>
+                                <!--<label for="female">Female</label>-->
+                            </p>
+
+                            <p>
+                                <label for="name">Name:<span class="asterik">*</span></label> 
+                                <input id="name" type="text" name="Name" placeholder="Enter Your Name"  onblur="checkUsername()" />
+                                <div id="n_error_msg"></div>
+                            </p>
+
+                            <p>
+                                <label for="height">Height:<span class="asterik">*</span></label>
+                                <input id="height" type="text" name="Height" placeholder="Enter Your Height" onblur="checkHeight()" />(cm)
+                                <div id="h_error_msg"></div>
+                            </p>
+
+                            <p>
+                                <label for="weight" >Weight:<span class="asterik">*</span></label>
+                                <input id="weight" type="text" name="Weight" placeholder="Enter Your Weight" onblur="checkWeight()" />(kg)
+                                <div id="w_error_msg"></div>
+                            </p>
+
+                            <p>
+                                <label></label>
+                                <input type="button" value="Calculate" id="claculateButton" onclick="calcfunc()" />
+                                <input type="button" value="Clear All" id="clearButton" onclick="clearfunc()" />
+                            </p>
+                    </fieldset>
+                </form>
+            </div>
+
+            <div id="outputContainer">
+                <fieldset>
+                    <legend>Output</legend>
+                        <table>
+                            <tr>
+                                <th id="underRange">0 - 18.5</th>
+                                <th id="idealRange">18.5 - 25</th>
+                                <th id="overRange">25 - 30</th>
+                                <th id="obeseRange">30 above</th>
+                            </tr>
+                            <tr>
+                                <th class="uNder" id="under">Under</th>
+                                <th class="iDeal" id="ideal">Ideal</th>
+                                <th class="oVer" id="over">Over</th>
+                                <th class="oBese" id="obese">Obese</th>
+                            </tr>
+                        </table>
+                        <br>
+                        <div id="result">Result: </div>
+                        <form id="RC">
+                            <div class="remarksClass" id="resultRemarks"></div>
+                        </form>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
