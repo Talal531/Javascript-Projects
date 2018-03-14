@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BMI Interface</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function clearfunc(){
+            var clr = document.getElementById("BMI");
+            clr.reset();
+            clr.className='hideOutput';
+        }
+        // function che1ck(){
+        //     var age_msg_id = document.getElementById("age_req_msg");
+        //     age_msg_id.className='required_class';
+        //     var age_msg = 'Require Feild'
+        //     age_msg_id.textcontent = age_msg;
+        // }
+
+        function CalBMI(a,h,w){
+            var m = document.getElementById("male").value;
+            var f = document.getElementById("female").value;
+            var a = document.getElementById("age").value;
+            var h = document.getElementById("height").value;
+            var w = document.getElementById("weight").value;
+
+            if(a == '' )
+            {
+                alert("Please Enter Your age.. !");
+            }
+             else if (h === '')
+            {
+                alert("Please Enter your Height in Centimeters..!");
+            }
+             else if (h <= 0)
+            {
+                alert("Height should be in Positive Number...!")
+            }
+             else if(w == '')
+            {
+                alert("Please Enter your Weight in Kilograms..!");
+            }
+             else if (w <= 0)
+            {
+                alert("Weight should be in Positive Number...!")
+            }
+            else
+            {
+            var finalbmi = w/((h/100)*(h/100));
+            var msg = 'Your age is: ' + a + ' years and ';
+            msg += 'Your BMI is: ' + finalbmi.toFixed(2);
+            // alert("You BMI is: " + finalbmi);
+            }
+
+            var el = document.getElementById("outputResult");
+            el.innerHTML =  msg;
+
+                if (finalbmi > 0 && finalbmi <=18.5)
+                {
+                    el.className='uNder';
+                    var msg1 = ' You are Under Weight';
+                    el.innerHTML =msg+'.' + '</br>'+msg1;
+                }
+                else if(finalbmi > 18.5 && finalbmi <=25)
+                {
+                    el.className='iDeal';
+                    var msg2 = ' Ideal Weight';
+                    el.innerHTML =msg+'.' + '</br>'+msg2;
+                }
+                else if(finalbmi > 25 && finalbmi <=30)
+                {
+                    el.className='oVer';
+                    var msg3 = ' You are Over Weight';
+                    el.innerHTML =msg+'.' +'</br>'+ msg3;
+                }
+                else if(finalbmi>30)
+                {
+                    el.className='oBese';
+                    var msg4 = ' Obese..!' + '</br>' + 'You are too Fat..';
+                    el.innerHTML =msg+'.' + '</br>'+msg4;
+                }
+                else
+                {}
+     //        var save = document.getElementById("savedAlert");
+     //       alert("Your Data Has been Saved.. !");
+      }
+    </script>
+	
+</head>
+<body>
+    <div id="wrapper">
+        <form id="BMI" name="bmiForm" method="get">
+
+            <div id="mainHeading">
+                <h1>Body Mass Index</h1>
+            </div>
+
+            <div id="inputField">
+                <fieldset>
+                    <legend>Input</legend>
+                        <p>
+                            <label for="gender">Sex:</label>
+                            <input id="male" type="radio" name="gender" value="M" required="required">
+                                <label for="male">Male</label>
+                            <input id="female" type="radio" name="gender" value="F" required="required">
+                                <label for="female">Female</label>
+                        </p>
+
+                        <p>
+                            <label for="age">Age:</label>
+                            <input id="age" type="text" name="age" placeholder="Enter Age" required="required" onblur="che1ck()">
+                            <!-- <div className="req_clas" id="age_req_msg"></div> -->
+                        </p>
+
+                        <p>
+                            <label for="height">Height:</label>
+                            <input id= "height" type="text" name="height" placeholder="Enter Height" required="required"> (cm)
+                            <!-- <div id="height_req_msg"></div> -->
+                        </p>
+
+                        <p>
+                            <label for="weight">Weight:</label>
+                            <input id = "weight" type="text" name="weight" placeholder="Enter Weight" required="required"> (kg)
+                            <!-- <div id="weight_req_msg"></div> -->
+                        </p>
+
+                        <p>
+                            <label></label>
+                            <input id="calculateButton" type="button" value="Calculate" onclick="CalBMI()" />
+                            <input id="clearButton" type="button" value="Clear All" onclick="clearfunc()" />
+                        </p>
+                </fieldset>
+            </div>
+
+            <div id="outputField">
+                <fieldset>
+                    <legend>Output</legend>
+                        <table>
+                            <tr>
+                                <th id="underRange">0 - 18.5</th>
+                                <th id="idealRange">18.5 - 25</th>
+                                <th id="overRange">25 - 30</th>
+                                <th id="obeseRange">30 above</th>
+                            </tr>
+                            <tr>
+                                <th class="uNder" id="under">Under</th>
+                                <th class="iDeal" id="ideal">Ideal</th>
+                                <th class="oVer" id="over">Over</th>
+                                <th class="oBese" id="obese">Obese</th>
+                            </tr>
+                        </table>
+                        <br>
+                        <div id="resultRemarks">Result: </div>
+                        <div id="outputResult"></div>
+
+                </fieldset>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
