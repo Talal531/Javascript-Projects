@@ -1,0 +1,57 @@
+@import url(http://fonts.googleapis.com/css?family=Rokkitt);
+* {
+    font-family: Rokkitt, serif;
+    font-size: 110%;
+}
+
+.row {
+    margin: 0;
+}
+
+.todo,
+.taskList {
+    /*Mine class Name*/
+    background-color: #ccc;
+    border-radius: 15px 15px 0px 0px;
+    padding: 25px;
+    margin-top: 10px;
+}
+
+.taskList {
+    border: none;
+    border-radius: 0px 0px 15px 15px;
+}
+
+.mainHeading {
+    /*Mine class*/
+    text-align: center;
+    color: greenyellow;
+    font-size: 3em;
+}
+
+.btnInfo,
+.btnDanger {
+    margin-top: 13px;
+    margin-right: 5px;
+    padding: 13px 15px;
+}
+
+.btninfo,
+.btndanger {
+    position: absolute;
+    top: 7px;
+    right: 10px;
+}
+
+.btninfo {
+    position: absolute;
+    right: 90px;
+}
+
+li {
+    /* list-style: none; */
+    /* color: #000; */
+    margin: 10px 0px;
+    margin-right: 5px;
+    /* border-radius: 6px; */
+}

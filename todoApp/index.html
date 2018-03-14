@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+
+</head>
+
+<body>
+    <div class="container todo">
+        <h1 class="mainHeading">Todo List</h1>
+        <input type="text" name="" value="" id="myInput" class="form-control" autofocus="autofocus" placeholder="Enter Your Task Here....">
+
+        <div class="btnDiv">
+            <button type="button" id="addBtn" class="btn btn-info btnInfo" onclick="validate()">Add</button>
+            <button type="button" id="deleteBtn" class="btn btn-danger btnDanger" onclick="deleteAll()">Delete All</button>
+        </div>
+    </div>
+
+    <hr style="width:80%; border-color:black;">
+    <div class="taskList container">
+
+        <ul id="unorderList" class="row list-group">
+            <!-- <li id="itemList" class="newItem list-group-item">Hello
+                <button class="btn btn-info btninfo">Edit</button>
+                <button class="btn btn-danger btndanger">Remove</button>
+            </li> -->
+        </ul>
+
+    </div>
+
+
+</body>
+
+<script src="js/main.js"></script>
+
+</html>
